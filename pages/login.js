@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../firebase/firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
-function login() {
+function Login() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -99,4 +99,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
