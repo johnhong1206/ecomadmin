@@ -170,7 +170,7 @@ function OrderDetailsPannel({ order, id }) {
               </div>
               <div className="3/4">
                 {order?.cart?.map((product) => (
-                  <div className="space-y-1">
+                  <div className="space-y-1" key={product?.name}>
                     <p className="text-sm font-medium">
                       <span className="mr-1">&#8226;</span>
                       {product?.name}
