@@ -4,14 +4,14 @@ import Sidebar from "../../components/Sidebar";
 
 function ProductAdd() {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <main className="flex w-full h-screen">
         <Sidebar />
         <div className="w-full px-10">
           <AddProductForm />
         </div>
       </main>
-      <div className="pb-10" />
+      <div className=" pb-36" />
     </div>
   );
 }
