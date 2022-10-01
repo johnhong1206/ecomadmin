@@ -15,41 +15,41 @@ function ProductDetailsPannel({ product, id }) {
   };
 
   return (
-    <div>
-      <div>
-        <div className="flex items-center space-x-4">
+    <div className="overflow-hidden px-4 lg:p-0 h-full">
+      <div className="flex items-center justify-center w-full">
+        <div className="flex items-center space-x-6">
           <ArrowLeftIcon
             onClick={navBack}
             className=" h-6 w-6 cursor-pointer"
           />
-          <div className="flex space-x-2 items-center">
-            <h1 className="text-lg font-bold my-4">{product?.name}</h1>
-            <PencilIcon
-              className=" h-5 w-5 cursor-pointer"
-              onClick={() => setEdit(!edit)}
-            />
-          </div>
+          <h1 className="text-lg font-bold my-4">{product?.name}</h1>
+          <PencilIcon
+            className=" h-5 w-5 cursor-pointer"
+            onClick={() => setEdit(!edit)}
+          />
         </div>
       </div>
 
-      <div className="p-10">
-        <div className="flex flex-col lg:flex-row items-center space-x-4 mb-10">
-          <div>
+      <div className="p-0 lg:p-10 w-full h-full overflow-scroll">
+        <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0 space-x-0 lg:space-x-5 mb-10">
+          <div className="w-full h-full">
             <Image
               src={product?.imageUrl}
               alt={product?.name}
               width={400}
               height={400}
-              layout="fixed"
+              layout="responsive"
               objectFit="contain"
             />
           </div>
-          <div>
-            <p>{product?.description}</p>
+          <div className="w-full h-full">
+            <p className="tracking-widest text-base lg:text-lg">
+              {product?.description}
+            </p>
           </div>
         </div>
-        <div>
-          <table className="w-full  bg-[#fafafa] table-fixed border-collapse border border-slate-500 ">
+        <div className="w-full h-auto">
+          <table className="  bg-[#fafafa] table-fixed border-collapse border border-slate-500 ">
             <thead>
               <tr>
                 <th className="border border-slate-600 w-[40%] ">Name</th>
@@ -76,6 +76,7 @@ function ProductDetailsPannel({ product, id }) {
             </tbody>
           </table>
           {product && edit && <ProductForm product={product} id={id} />}
+          <div className="pb-32" />
         </div>
       </div>
     </div>

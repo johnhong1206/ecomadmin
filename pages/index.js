@@ -28,10 +28,10 @@ export default function Home() {
     router.push("/coupons");
   };
   return (
-    <div className="">
-      <main className="flex w-full">
+    <div className="w-screen h-screen">
+      <main className="flex-col-reverse lg:flex-row flex w-full flex-1 h-full">
         <Sidebar />
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className=" bg-[#fafafa] grid place-items-center w-full h-full">
           <h2 className="text-4xl my-12  lg:my-3">ZH ECOM</h2>
           <div className="grid grid-flow-row-dense grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
             <SidebarRow

@@ -35,8 +35,10 @@ function Sidebar() {
   };
 
   return (
-    <div className=" col-span-2 flex flex-col items-center px-4 md:items-start">
-      <h2 className="text-2xl mb-3">ZH ECOM</h2>
+    <div className="col-span-2 flex flex-row lg:flex-col items-start justify-between lg:justify-start px-4 md:items-start">
+      <div className=" hidden w-full lg:flex items-center justify-center my-4">
+        <h2 className="text-3xl mb-3 text-center">ZH ECOM</h2>
+      </div>
       <SidebarRow Icon={HomeIcon} title="Home" onClick={navHome} />
       <SidebarRow
         Icon={BuildingLibraryIcon}

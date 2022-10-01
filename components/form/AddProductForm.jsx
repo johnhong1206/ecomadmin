@@ -61,7 +61,9 @@ function AddProductForm() {
     };
   };
 
-  const addProduct = async () => {
+  const addProduct = async (e) => {
+    e.preventDefault();
+
     const imageRef = ref(storage, `/products/${name}`);
     await uploadString(imageRef, imgToPost, "data_url").then(
       async (snapshot) => {
@@ -85,7 +87,7 @@ function AddProductForm() {
   };
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 w-full h-full">
       <div className="flex items-center space-x-4">
         <ArrowLeftIcon onClick={navBack} className=" h-6 w-6 cursor-pointer" />
         <div className="flex space-x-2 items-center">

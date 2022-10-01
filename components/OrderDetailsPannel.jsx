@@ -29,15 +29,17 @@ function OrderDetailsPannel({ order, id }) {
   };
 
   return (
-    <div className="w-full">
-      <div>
+    <div className="overflow-hidden px-4 lg:p-0 h-full w-full">
+      <div className="flex items-center justify-center w-full">
         <div className="flex items-center space-x-4">
           <ArrowLeftIcon
             onClick={navBack}
             className=" h-6 w-6 cursor-pointer"
           />
           <div className="flex space-x-2 items-center">
-            <h1 className="text-lg font-bold my-4">{id}</h1>
+            <h1 className="text-base lg:text-lg font-bold my-4">
+              Order Id: {id}
+            </h1>
             <PencilIcon
               className=" h-5 w-5 cursor-pointer"
               onClick={() => setEdit(!edit)}
@@ -46,17 +48,17 @@ function OrderDetailsPannel({ order, id }) {
         </div>
       </div>
 
-      <div className="p-10">
+      <div className="p-0 lg:p-10 w-full h-full overflow-scroll">
         <div className="flex flex-col lg:flex-row items-center space-x-4 mb-10"></div>
-        <div>
+        <div className="w-full">
           <div className="shadow-sm w-95vw cursor-pointer">
-            <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-t-2 border-l-2 border-r-2 border-slate-400">
+            <div className="hover:shadow-lg flex flex-col lg:flex-row items-start lg:items-center w-full px-2 py-4 border-b border-t-2 border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
                 <h2>Id:</h2>
               </div>
               <div className="w-3/4 flex items-center space-x-12">
                 <div>
-                  <h2 className="font-medium">{id}</h2>
+                  <h2 className="text-sm lg:text-base">{id}</h2>
                   <h2>
                     {order?.received ? (
                       <p className="uppercase text-sm text-green-500 font-medium">
@@ -96,56 +98,58 @@ function OrderDetailsPannel({ order, id }) {
                 <h2>Amount:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">RM {order?.amount}</h2>
+                <h2 className="text-sm lg:text-base">RM {order?.amount}</h2>
               </div>
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Order Date</h2>
+                <h2>Order Date:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">{order?.date}</h2>
+                <h2 className="text-sm lg:text-base">{order?.date}</h2>
               </div>
             </div>
-            <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
+            <div className="hover:shadow-lg flex flex-col lg:flex-row items-start lg:items-center w-full px-2 py-4 border-b border-t-2 border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Customer:</h2>
+                <h2 className="">Customer:</h2>
               </div>
               <div className="3/4 space-y-1">
-                <div className="font-medium uppercase flex items-center space-x-2">
-                  <h2>
+                <div className="uppercase flex items-center space-x-2">
+                  <h2 className="text-sm lg:text-base">
                     Name <span>:</span>
                   </h2>
-                  <h2>{order?.contactName}</h2>
+                  <h2 className="text-sm lg:text-base">{order?.contactName}</h2>
                 </div>
-                <div className="font-medium uppercase flex items-center space-x-2">
-                  <h2>
+                <div className="uppercase flex items-center space-x-2">
+                  <h2 className="text-sm lg:text-base">
                     email <span>:</span>
                   </h2>
-                  <h2>{order?.email}</h2>
+                  <h2 className="text-sm lg:text-base">{order?.email}</h2>
                 </div>
-                <div className="font-medium uppercase flex items-center space-x-2">
-                  <h2>
+                <div className="uppercase flex items-center space-x-2">
+                  <h2 className="text-sm lg:text-base">
                     Contact Number <span>:</span>
                   </h2>
-                  <h2>{order?.contactNumber}</h2>
+                  <h2 className="text-sm lg:text-base">
+                    {order?.contactNumber}
+                  </h2>
                 </div>
               </div>
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Pickup Method</h2>
+                <h2>Pickup Method:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">{order?.method}</h2>
+                <h2 className="text-sm lg:text-base">{order?.method}</h2>
               </div>
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Available Date</h2>
+                <h2>Available Date:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">
+                <h2 className="text-sm lg:text-base">
                   {order?.availableDate?.length > 0
                     ? order?.availableDate
                     : "none"}
@@ -154,24 +158,24 @@ function OrderDetailsPannel({ order, id }) {
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Preferred Time</h2>
+                <h2>Preferred Time:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">
+                <h2 className="text-sm lg:text-base">
                   {order?.preferredTime?.length > 0
                     ? order?.preferredTime
                     : "none"}
                 </h2>
               </div>
             </div>
-            <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
+            <div className="hover:shadow-lg flex flex-col lg:flex-row items-start lg:items-center w-full px-2 py-4 border-b border-t-2 border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Product</h2>
+                <h2>Product:</h2>
               </div>
               <div className="3/4">
                 {order?.cart?.map((product) => (
                   <div className="space-y-1" key={product?.name}>
-                    <p className="text-sm font-medium">
+                    <p className="text-sm lg:text-base">
                       <span className="mr-1">&#8226;</span>
                       {product?.name}
                     </p>
@@ -181,36 +185,37 @@ function OrderDetailsPannel({ order, id }) {
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Code Redeem</h2>
+                <h2>Code Redeem:</h2>
               </div>
               <div className="3/4">
                 {order?.code ? (
-                  <p className="font-medium">Yes</p>
+                  <p className="text-sm lg:text-base">Yes</p>
                 ) : (
-                  <p className="font-medium">No</p>
+                  <p className="text-sm lg:text-base">No</p>
                 )}
               </div>
             </div>
             <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Point Redeem</h2>
+                <h2>Point Redeem:</h2>
               </div>
               <div className="3/4">
                 {order?.point ? (
-                  <p className="font-medium">Yes</p>
+                  <p className="text-sm lg:text-base">Yes</p>
                 ) : (
-                  <p className="font-medium">No</p>
+                  <p className="text-sm lg:text-base">No</p>
                 )}
               </div>
             </div>
-            <div className="hover:shadow-lg flex flex-row items-center w-full px-2 py-4 border-b border-l-2 border-r-2 border-slate-400">
+            <div className="hover:shadow-lg flex flex-col lg:flex-row items-start lg:items-center w-full px-2 py-4 border-b border-t-2 border-l-2 border-r-2 border-slate-400">
               <div className="w-1/4 font-medium uppercase">
-                <h2>Address</h2>
+                <h2>Address:</h2>
               </div>
               <div className="3/4">
-                <h2 className="font-medium">{order?.address}</h2>
+                <h2 className="text-sm lg:text-base">{order?.address}</h2>
               </div>
             </div>
+            <div className="pb-24" />
           </div>
         </div>
       </div>

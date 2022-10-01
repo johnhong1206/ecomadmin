@@ -5,13 +5,12 @@ import Sidebar from "../../components/Sidebar";
 function ProductAdd() {
   return (
     <div className="">
-      <main className="flex w-full h-screen">
+      <main className="flex-col-reverse lg:flex-row flex w-full flex-1 h-full">
         <Sidebar />
-        <div className="w-full px-10">
+        <div className="px-10 w-full">
           <AddProductForm />
         </div>
       </main>
-      <div className=" pb-36" />
     </div>
   );
 }

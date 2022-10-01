@@ -39,8 +39,8 @@ function Index() {
   }, [db]);
 
   return (
-    <div className="overflow-hidden">
-      <main className="flex w-full h-screen">
+    <div className="w-screen h-screen">
+      <main className="flex-col-reverse lg:flex-row flex w-full flex-1 h-full">
         <Sidebar />
         <OrdersPannel orders={orders} products={products} />
       </main>
